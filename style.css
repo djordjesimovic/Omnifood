@@ -7,6 +7,7 @@
 html{
     font-size: 62.5%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -26,7 +27,7 @@ header{
     align-items: center;
     width: 100%;
     padding: 0 4.8rem;
-    height: 9.6rem;
+    height: 8rem;
     background-color: #fdf2e9;
     z-index: 1;
 }
@@ -36,8 +37,11 @@ header .logo{
 }
 
 header .logo img{
-    width: 164px;
-    height: 22px;
+    /* width: 164px;
+    height: 22px; */
+
+    width: 16rem;
+    height: 2.2rem;
 }
 
 header nav{
@@ -176,8 +180,8 @@ header nav .nav-list li a.last{
 }
 
 .hero .hero-image{
-    width: 570px;
-    height: 560px;
+    width: 90%;
+    height: 100%;
 }
 
 .hero .hero-image img{
@@ -196,9 +200,13 @@ header nav .nav-list li a.last{
 }
 
 .featured-section .logos{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .featured-section .logos .logo{
@@ -521,6 +529,11 @@ header nav .nav-list li a.last{
 .testimonials-section .gallery .gallery-image img{
     width: 100%;
     display: block;
+    transition: .3s ease;
+}
+
+.testimonials-section .gallery .gallery-image img:hover{
+    transform: scale(1.1);
 }
 
 
@@ -528,41 +541,33 @@ header nav .nav-list li a.last{
 /* ========================= Pricing Section ======================== */
 
 .pricing-section{
-    padding: 3rem;
+    padding: 7rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
     align-items: center;
 }
 
 .pricing-cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* display: flex;
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center; */
-    gap: 6.5rem;
     width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    max-width: 120rem;
-    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
 }
 
-.price-card{
+.pricing-cards .price-card{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
     border-radius: 10px;
     padding: 4.8rem;
-    width: 85%;
 }
 
 .starter{
@@ -579,7 +584,7 @@ header nav .nav-list li a.last{
     content: "best value";
     position: absolute;
     top: 5%;
-    right: -30%;
+    right: -25%;
     text-transform: uppercase;
     font-size: 1.2rem;
     font-weight: 700;
@@ -721,7 +726,7 @@ header nav .nav-list li a.last{
     /* justify-content: center; */
 }
 
-.contact-text h2{
+.contact-heading{
     color: #45260a;
     /* color: inherit; */
     margin-bottom: 3.2rem;
@@ -729,7 +734,7 @@ header nav .nav-list li a.last{
     line-height: 1.2;
 }
 
-.contact-text p{
+.contact-description{
     font-size: 1.8rem;
     line-height: 1.8;
     margin-bottom: 4.8rem;
@@ -848,6 +853,7 @@ header nav .nav-list li a.last{
     height: 20rem;
     border: 1px solid transparent;
     padding: 1rem;
+    align-items: center;
 }
 
 .logo-container a img{
@@ -858,6 +864,7 @@ header nav .nav-list li a.last{
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 2.6rem;
 }
 
@@ -873,6 +880,7 @@ header nav .nav-list li a.last{
     line-height: 1.6;
     color: #767676;
     margin-top: auto;
+    text-align: center;
 }
 
 .col{
@@ -982,11 +990,12 @@ header nav .nav-list li a.last{
     }
 
     .hero .hero-image{
-        width: 520px;
-        height: 510px;
+        width: 70%;
+        height: auto;
     }
-    .pricing-cards{
-        width: 38%;
+    .complete:after{
+        width: 200px;
+        top: 8%;
     }
 }
 
@@ -994,19 +1003,16 @@ header nav .nav-list li a.last{
     html{
         font-size: 42.5%;
     }
-    .hero .hero-image{
-        width: 480px;
-        height: 470px;
+    .complete:after{
+        width: 200px;
+        top: 8%;
     }
 }
 
 @media(max-width: 800px){
-    html{
-        font-size: 36.5%;
-    }
     .hero .hero-image{
-        width: 420px;
-        height: 410px;
+        width: 70%;
+        height: auto;
     }
     .article{
         display: flex;
@@ -1020,28 +1026,69 @@ header nav .nav-list li a.last{
         width: 100%;
     }
     .article .article-image img{
-        width: 80%;
+        width: 35%;
     }
     .art-seccond{
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .complete:after{
+        width: 100px;
+        right: -10%;
+    }
 }
 
 @media(max-width: 600px){
-    .hero .hero-image{
-        width: 370px;
-        height: 360px;
+    html{
+        font-size: 38.5%;
     }
-    /* .meals-section .meals-cards{
-        width: auto;
-    } */
+    .hero .hero-image{
+        width: 60%;
+        height: auto;
+    }
+    .article .article-image img{
+        width: 40%;
+    }
+
+    .contact-container{
+        flex-direction: column-reverse;
+    }
+    .contact-text{
+        width: 100%;
+        height: 50%;
+    }
+    .contact-photo{
+        width: 100%;
+        height: 50rem;
+    }
+
+    .contact-form{
+        gap: 0rem;
+    }
+
+    .contact-form .row{
+        flex-direction: column;
+    }
+
+    .contact-form .row .field{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .contact-description, .contact-heading{
+        margin-bottom: 2.2rem;
+    }
+
 }
 
 @media(max-width: 400px){
     .hero .hero-image{
-        width: 320px;
-        height: 310px;
+        width: 80%;
+        height: auto;
+    }
+    .article .article-image img{
+        width: 40%;
     }
 }
 
@@ -1075,7 +1122,7 @@ header nav .nav-list li a.last{
 .resp-nav-list li a{
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     transition: all 0.3s;
     color: #333;
     padding: 10px 20px;
